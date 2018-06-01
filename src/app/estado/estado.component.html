@@ -1,0 +1,19 @@
+<div class="sa-margen">
+  <h2>Estado Actual de tu habitacion</h2>
+  <div class="row" >
+    <div class="col-sm-5">
+      <img [src]="urlImagen" width="180" height="180" >
+      <p style="text-align: center">{{todoEsta}}</p>
+    </div>
+    <div class="col-sm-3">
+      <p>{{mensaje}}</p>
+    </div>
+    <div class="col-sm-4">
+      <button (click)="mensajeRevision()">{{nombreBotonUno}}</button>
+      <p></p>
+      <button (click)="apagarEncender()">{{nombreBotonDos}}</button>
+      <p></p>
+      <button (click)="ruido()">{{nombreBotonTres}} </button>
+    </div>
+  </div>
+</div>

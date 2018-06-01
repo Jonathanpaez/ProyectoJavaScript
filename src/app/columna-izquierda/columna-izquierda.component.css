@@ -1,0 +1,10 @@
+.sa-fondo{
+  background-color: #2b81af;
+}
+.centerbtn{
+  position:absolute;
+  width:100%; left:0;
+  text-align:center;
+  margin:auto;
+
+}
