@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-estado',
@@ -16,6 +18,7 @@ export class EstadoComponent implements OnInit {
   urlImagenPeligro="https://i.pinimg.com/originals/20/7e/65/207e65b612cf2dec2b36a4ac4af20ea0.png";
   urlPeligroWil="https://i.ytimg.com/vi/-x7IpcrDXpI/hqdefault.jpg";
   todoEsta="Todo esta bien";
+  conexion;
 
   mensajeRevision(){
     this.mensaje = "El Sistema se encuentra en Funcionamiento";
@@ -40,7 +43,11 @@ export class EstadoComponent implements OnInit {
     this.todoEsta="peligro will robinson  --UwU--- peligro will robinson ";
   }
 
-  constructor() { }
+  constructor(private http:Http) {
+    llamada(){
+      this.conexion=this.http.get("/datos").pipe(map(data=>data.json()));
+    }
+  }
 
   ngOnInit() {
 
