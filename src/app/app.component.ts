@@ -12,16 +12,10 @@ import { map } from 'rxjs/operators';
 export class AppComponent {
   title = 'app';
   urlTodoBien="https://i1.wp.com/gifs.org.es/gifs/2014/09/snoopy-hulahoop.gif?resize=257%2C175";
-  conexion;
 
-  constructor(private http: Http) {
+
+  constructor() {
   }
 
-  llamada(){
-    console.log("llamando data de backend");
-    this.conexion = this.http.get('/raspberry').pipe(map(data => {
-      console.log("got: ", data);
-      return data.json();
-    }));
-  }
+
 }

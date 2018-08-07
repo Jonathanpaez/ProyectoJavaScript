@@ -15,5 +15,15 @@
       <p></p>
       <button (click)="ruido()">{{nombreBotonTres}} </button>
     </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-4"><p></p></div>
+    <div class="col-sm-4"><p></p></div>
+    <div class="col-sm-4">Info de backend:
+      <pre>
+      {{(conexion | async) | json }}
+       </pre>
+      <button (click)="llamada()">Sync backend</button></div>
   </div>
 </div>
