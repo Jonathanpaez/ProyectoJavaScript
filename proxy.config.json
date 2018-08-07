@@ -1,6 +1,6 @@
 {
-  "/datosRasberry": {
-    "target":"http://172.29.64.190:3000",
+  "/raspberry": {
+    "target":"http://localhost:3000",
     "secure":false,
     "logLevel":"debug"
   }
