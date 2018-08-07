@@ -18,7 +18,10 @@ export class AppComponent {
   }
 
   llamada(){
-    console.log("data");
-    this.conexion = this.http.get('/datosEquipos').pipe(map(data => data.json()));
+    console.log("llamando data de backend");
+    this.conexion = this.http.get('/raspberry').pipe(map(data => {
+      console.log("got: ", data);
+      return data.json();
+    }));
   }
 }

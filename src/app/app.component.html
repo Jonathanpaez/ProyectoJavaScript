@@ -34,9 +34,13 @@
       <app-rede-social></app-rede-social>
     </p></div>
   </div>
+  <div class="row">
+    Info de backend: 
       <pre>
       {{(conexion | async) | json }}
        </pre>
       <button (click)="llamada()">Sync backend</button>
+  </div>
+  
 
 </div>

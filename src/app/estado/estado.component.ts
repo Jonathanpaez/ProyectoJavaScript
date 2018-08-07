@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Http} from '@angular/http';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-estado',
@@ -17,6 +19,7 @@ export class EstadoComponent implements OnInit {
   urlPeligroWil="https://i.ytimg.com/vi/-x7IpcrDXpI/hqdefault.jpg";
   todoEsta="Todo esta bien";
 
+
   mensajeRevision(){
     this.mensaje = "El Sistema se encuentra en Funcionamiento";
   }
@@ -34,17 +37,26 @@ export class EstadoComponent implements OnInit {
       this.todoEsta="Mucho menjor";
     }
   }
+  infoBackend(url){
+    return this.http.get(url).pipe(map(datos=>{
+      console.log("Exito");
+      return datos.json();
+    }))
+  }
+
   ruido(){
     this.urlImagen=this.urlPeligroWil;
     this.mensaje="peligro will robinson - peligro will robinson  -peligro will robinson  - peligro will robinson ";
     this.todoEsta="peligro will robinson  --UwU--- peligro will robinson ";
   }
 
-  constructor() {
+  constructor(private http:Http) {
   }
 
   ngOnInit() {
-
+  this.infoBackend("/raspberry").subscribe(informacion=>{
+    console.log("siguiente", informacion);
+  })
   }
 
 }
